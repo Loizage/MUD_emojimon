@@ -14,7 +14,7 @@ export function createSystemCalls(
     if (!playerEntity) {
       throw new Error("no player");
     }
-    const tx = await worldSend("move",[x,y]);
+    const tx = await worldSend("move", [x,y]);
     await awaitStreamValue(txReduced$, (txHash) => txHash === tx.hash);
   };
 
